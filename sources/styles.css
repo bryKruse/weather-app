@@ -75,3 +75,8 @@
 .low-temperature {
   font-size: 20px;
 }
+.link-to-code {
+  font-family: monospace;
+  font-size: 15px;
+  padding-left: 90px;
+}
