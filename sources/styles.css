@@ -1,0 +1,77 @@
+.top-title {
+  font-size: 70px;
+  text-align: center;
+  font-weight: bolder;
+  color: #02ad97;
+  padding: 15px;
+  font-family: "Lobster", cursive;
+}
+.search-city-weather {
+  border: 1px solid rgb(53, 54, 53);
+  background: rgb(127, 168, 154, 0.01);
+  margin: 10px 30px 40px -11px;
+  padding: 10px;
+  width: 300px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.897);
+  transition: all 150ms ease-in-out;
+}
+.search-city-weather:hover {
+  background-color: rgba(108, 131, 153, 0.774);
+}
+.search-button,
+.currentlocationbtn {
+  background-color: #d4ecdd;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 9px 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  transition: all 150ms ease-in-out;
+}
+.search-button:hover {
+  background-color: rgba(108, 131, 153, 0.774);
+}
+
+.currentlocationbtn:hover {
+  background-color: rgba(108, 131, 153, 0.774);
+}
+.top-information {
+  background: #d4ecdd;
+  border-radius: 20px 150px 150px 20px;
+  padding: 60px;
+  font-family: "Zilla Slab", serif;
+}
+.city {
+  font-weight: bolder;
+}
+.more-information {
+  font-size: 21px;
+}
+.current-temp {
+  font-size: 60px;
+}
+.units {
+  font-size: 20px;
+  vertical-align: text-top;
+}
+.weather-icon {
+  font-size: 55px;
+  padding: 10px 20px 10px;
+}
+.description {
+  font-size: 20px;
+}
+.upcoming-days-weather {
+  background: #d4ecdd;
+  border-radius: 50px;
+  padding: 20px;
+  text-align: center;
+  font-family: "Zilla Slab", serif;
+}
+.icon-weather-future {
+  font-size: 30px;
+}
+.high-temperature,
+.low-temperature {
+  font-size: 20px;
+}
