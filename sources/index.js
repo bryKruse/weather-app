@@ -39,8 +39,6 @@ function formatDate(timestamp) {
   let year = now.getFullYear(timestamp);
   let date = now.getDate(timestamp);
 
-  return `${day} ${month} ${date},${year} ${hours}:${minutes}`;
-
   //let dayToday = document.querySelector("#day");
   //dayToday.innerHTML = `${day}`;
   //let currentDate = document.querySelector("#date");
@@ -50,6 +48,7 @@ function formatDate(timestamp) {
   //hour: "numeric",
   //minute: "numeric",
   //hour12: true,
+  return `${day} ${month} ${date},${year} ${hours}:${minutes}`;
 }
 
 function showTemp(response) {
