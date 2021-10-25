@@ -1,3 +1,9 @@
+.border-of-weather-app {
+  border: 2px solid hsl(172, 98%, 34%);
+  border-radius: 20px;
+  margin: 40px 60px 40px 60px;
+  padding: 20px;
+}
 .top-title {
   font-size: 70px;
   text-align: center;
@@ -63,7 +69,7 @@
 }
 .upcoming-days-weather {
   background: #d4ecdd;
-  border-radius: 50px;
+  border-radius: 20px;
   padding: 20px;
   text-align: center;
   font-family: "Zilla Slab", serif;
@@ -78,5 +84,6 @@
 .link-to-code {
   font-family: monospace;
   font-size: 15px;
-  padding-left: 90px;
+  padding-left: 60px;
+  margin-top: 0px;
 }

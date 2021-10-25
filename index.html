@@ -31,118 +31,120 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <p><span class="top-title">Travel in Weather Style 🌎</span></p>
-    <div class="container">
-      <div class="weather-information">
-        <form id="search-form">
-          <input
-            type="text"
-            placeholder="Enter a city"
-            class="search-city-weather"
-            autocomplete="off"
-            autofocus="on"
-            id="search-city-info"
-          />
-          <input type="submit" value="search" class="search-button" />
-          <button class="currentlocationbtn" id="current-location">
-            current location
-          </button>
-        </form>
-        <div class="row top-information">
-          <div class="col display-temperature">
-            <h1>
-              <span class="current-temp" id="current-temp">77</span>
-              <span class="units">
-                <span class="fahrenheit" id="fahrenheit">
-                  <a href="#">°F</a>
+    <div class="border-of-weather-app" id="border-of-weather-app">
+      <p><span class="top-title">Travel in Weather Style 🌎</span></p>
+      <div class="container">
+        <div class="weather-information">
+          <form id="search-form">
+            <input
+              type="text"
+              placeholder="Enter a city"
+              class="search-city-weather"
+              autocomplete="off"
+              autofocus="on"
+              id="search-city-info"
+            />
+            <input type="submit" value="search" class="search-button" />
+            <button class="currentlocationbtn" id="current-location">
+              current location
+            </button>
+          </form>
+          <div class="row top-information">
+            <div class="col display-temperature">
+              <h1>
+                <span class="current-temp" id="current-temp">77</span>
+                <span class="units">
+                  <span class="fahrenheit" id="fahrenheit">
+                    <a href="#">°F</a>
+                  </span>
+                  |
+                  <span class="celsius" id="celsius">
+                    <a href="#">°C</a>
+                  </span>
                 </span>
-                |
-                <span class="celsius" id="celsius">
-                  <a href="#">°C</a>
-                </span>
-              </span>
-            </h1>
-            <div class="weather-icon">
-              <i class="fas fa-cloud-sun"></i>
+              </h1>
+              <div class="weather-icon">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <div class="description">
+                <span id="description"> Partly cloudy</span>
+              </div>
             </div>
-            <div class="description">
-              <span id="description"> Partly cloudy</span>
+            <div class="col city-today-date-time">
+              <h1 class="city" id="city">New York</h1>
+              <h3 class="today-time" id="today-time-date">
+                <span id="day">Friday</span>
+                <span id="date">October 8, 2021</span>
+                <div class="time" id="time">2:16PM</div>
+              </h3>
+            </div>
+            <div class="col more-information">
+              <div class="feelslike">
+                Feels Like: <span id="current-day-feels-like">77</span>
+              </div>
+              <div class="humidity">Humidity: <span id="humid">63</span>%</div>
+              <div class="wind">Wind: <span id="windy">0</span>mph</div>
             </div>
           </div>
-          <div class="col city-today-date-time">
-            <h1 class="city" id="city">New York</h1>
-            <h3 class="today-time" id="today-time-date">
-              <span id="day">Friday</span>
-              <span id="date">October 8, 2021</span>
-              <div class="time" id="time">2:16PM</div>
-            </h3>
-          </div>
-          <div class="col more-information">
-            <div class="feelslike">
-              Feels Like: <span id="current-day-feels-like">77</span>
-            </div>
-            <div class="humidity">Humidity: <span id="humid">63</span>%</div>
-            <div class="wind">Wind: <span id="windy">0</span>mph</div>
-          </div>
-        </div>
-        <br />
-        <br />
-        <div class="row upcoming-days-weather">
-          <div class="col-2 next-days">
-            <h3 class="day">Saturday</h3>
-            <div class="icon-weather-future">
-              <i class="fas fa-cloud"></i>
-            </div>
+          <br />
+          <br />
+          <div class="row upcoming-days-weather">
+            <div class="col-2 next-days">
+              <h3 class="day">Saturday</h3>
+              <div class="icon-weather-future">
+                <i class="fas fa-cloud"></i>
+              </div>
 
-            <span class="high-temperature">70°F |</span>
-            <span class="low-temperature">64°F </span>
-          </div>
-          <div class="col-2 next-days">
-            <h3 class="day">Sunday</h3>
-            <div class="icon-weather-future">
-              <i class="fas fa-cloud-showers-heavy"></i>
+              <span class="high-temperature">70°F |</span>
+              <span class="low-temperature">64°F </span>
             </div>
+            <div class="col-2 next-days">
+              <h3 class="day">Sunday</h3>
+              <div class="icon-weather-future">
+                <i class="fas fa-cloud-showers-heavy"></i>
+              </div>
 
-            <span class="high-temperature">68°F |</span>
-            <span class="low-temperature">64°F </span>
-          </div>
-          <div class="col-2 next-days">
-            <h3 class="day">Monday</h3>
-            <div class="icon-weather-future">
-              <i class="fas fa-cloud"></i>
+              <span class="high-temperature">68°F |</span>
+              <span class="low-temperature">64°F </span>
             </div>
+            <div class="col-2 next-days">
+              <h3 class="day">Monday</h3>
+              <div class="icon-weather-future">
+                <i class="fas fa-cloud"></i>
+              </div>
 
-            <span class="high-temperature">74°F |</span>
-            <span class="low-temperature">65°F </span>
-          </div>
-          <div class="col-2 next-days">
-            <h3 class="day">Tuesday</h3>
-            <div class="icon-weather-future">
-              <i class="fas fa-cloud-sun"></i>
+              <span class="high-temperature">74°F |</span>
+              <span class="low-temperature">65°F </span>
             </div>
-            <span class="high-temperature">74°F |</span>
-            <span class="low-temperature">65°F </span>
-          </div>
-          <div class="col-2 next-days">
-            <h3 class="day">Wednesday</h3>
-            <div class="icon-weather-future">
-              <i class="fas fa-cloud-sun"></i>
+            <div class="col-2 next-days">
+              <h3 class="day">Tuesday</h3>
+              <div class="icon-weather-future">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <span class="high-temperature">74°F |</span>
+              <span class="low-temperature">65°F </span>
             </div>
-            <span class="high-temperature">78°F |</span>
-            <span class="low-temperature">64°F </span>
-          </div>
-          <div class="col-2 next-days">
-            <h3 class="day">Thursday</h3>
-            <div class="icon-weather-future">
-              <i class="fas fa-cloud-sun"></i>
+            <div class="col-2 next-days">
+              <h3 class="day">Wednesday</h3>
+              <div class="icon-weather-future">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <span class="high-temperature">78°F |</span>
+              <span class="low-temperature">64°F </span>
             </div>
-            <span class="high-temperature">78°F |</span>
-            <span class="low-temperature">64°F </span>
+            <div class="col-2 next-days">
+              <h3 class="day">Thursday</h3>
+              <div class="icon-weather-future">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <span class="high-temperature">78°F |</span>
+              <span class="low-temperature">64°F </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <br />
+
     <span class="link-to-code">
       <a href="https://github.com/bryKruse/weather-app" target="_blank"
         >Open-source code</a
