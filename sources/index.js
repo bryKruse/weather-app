@@ -1,45 +1,3 @@
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let year = now.getFullYear();
-let date = now.getDate();
-
-let dayToday = document.querySelector("#day");
-dayToday.innerHTML = `${day}`;
-let currentDate = document.querySelector("#date");
-currentDate.innerHTML = `${month} ${date}, ${year}`;
-let currentTime = document.querySelector("#time");
-currentTime.innerHTML = now.toLocaleString("en-US", {
-  hour: "numeric",
-  minute: "numeric",
-  hour12: true,
-});
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
@@ -48,6 +6,51 @@ celsius.addEventListener("click", chooseCelsius);
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", chooseFahrenheit);
+
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+  let year = now.getFullYear();
+  let date = now.getDate();
+
+  let dayToday = document.querySelector("#day");
+  dayToday.innerHTML = `${day}`;
+  let currentDate = document.querySelector("#date");
+  currentDate.innerHTML = `${month} ${date}, ${year}`;
+  let currentTime = document.querySelector("#time");
+  currentTime.innerHTML = now.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  return `${day} ${month} ${date},${year} ${hours}:${minutes}`;
+}
 
 function showTemp(response) {
   console.log(response);
@@ -64,6 +67,9 @@ function showTemp(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather.description;
+  document.querySelector("#today-time-date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 
 function searchCity(event) {
