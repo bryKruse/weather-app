@@ -9,8 +9,8 @@ fahrenheit.addEventListener("click", chooseFahrenheit);
 
 function formatDate(timestamp) {
   let now = new Date(timestamp);
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
+  let hours = now.getHours(timestamp);
+  let minutes = now.getMinutes(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -20,7 +20,7 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[now.getDay()];
+  let day = days[now.getDay(timestamp)];
   let months = [
     "January",
     "February",
@@ -35,21 +35,21 @@ function formatDate(timestamp) {
     "November",
     "December",
   ];
-  let month = months[now.getMonth()];
-  let year = now.getFullYear();
-  let date = now.getDate();
+  let month = months[now.getMonth(timestamp)];
+  let year = now.getFullYear(timestamp);
+  let date = now.getDate(timestamp);
 
-  let dayToday = document.querySelector("#day");
-  dayToday.innerHTML = `${day}`;
-  let currentDate = document.querySelector("#date");
-  currentDate.innerHTML = `${month} ${date}, ${year}`;
-  let currentTime = document.querySelector("#time");
-  currentTime.innerHTML = now.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
   return `${day} ${month} ${date},${year} ${hours}:${minutes}`;
+
+  //let dayToday = document.querySelector("#day");
+  //dayToday.innerHTML = `${day}`;
+  //let currentDate = document.querySelector("#date");
+  //currentDate.innerHTML = `${month} ${date}, ${year}`;
+  //let currentTime = document.querySelector("#time");
+  //currentTime.innerHTML = now.toLocaleString("en-US", {
+  //hour: "numeric",
+  //minute: "numeric",
+  //hour12: true,
 }
 
 function showTemp(response) {
@@ -66,8 +66,8 @@ function showTemp(response) {
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
-    response.data.weather.description;
-  document.querySelector("#today-time-date").innerHTML = formatDate(
+    response.data.weather[0].description;
+  document.querySelector(`#today-time-date`).innerHTML = formatDate(
     response.data.dt * 1000
   );
 }
