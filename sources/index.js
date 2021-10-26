@@ -67,6 +67,9 @@ function showTemp(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  let fahrenheitTemperature = document.querySelector("#current-temp");
+  fahrenheitTemperature.innerHTML = Math.round(response.data.main.temp);
 }
 
 function search(city) {
