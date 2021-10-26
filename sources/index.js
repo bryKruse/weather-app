@@ -64,12 +64,9 @@ function showTemp(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  let d = new Date();
-  let localTime = d.getTime();
-  let localOffset = d.getTimezoneOffset();
-  let utc = localTime + localOffset;
-  let nDate = new Date(utc + 1000 * response.data.timezone - 7200000);
-  document.querySelector("#today-time-date").innerHTML = formatDate(nDate);
+  document.querySelector("#today-time-date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 
 function searchCity(event) {
