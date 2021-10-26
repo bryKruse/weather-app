@@ -1,44 +1,43 @@
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let year = now.getFullYear();
-let date = now.getDate();
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+  let year = now.getFullYear();
+  let date = now.getDate();
 
-let dayToday = document.querySelector("#day");
-dayToday.innerHTML = `${day}`;
-let currentDate = document.querySelector("#date");
-currentDate.innerHTML = `${month} ${date}, ${year}`;
-let currentTime = document.querySelector("#time");
-currentTime.innerHTML = now.toLocaleString("en-US", {
-  hour: "numeric",
-  minute: "numeric",
-  hour12: true,
-});
+  return `${day} ${month} ${date}, ${year} ${hours}:${minutes}`;
+}
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
@@ -68,10 +67,7 @@ function showTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  let fahrenheitTemperature = document.querySelector("#current-temp");
-  fahrenheitTemperature.innerHTML = Math.round(response.data.main.temp);
   fahrenheitTemperature = response.data.main.temp;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function search(city) {
@@ -117,15 +113,17 @@ searchForm.addEventListener("submit", searchCity);
 function chooseCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#current-temp");
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+
+  let celsiusTemperature = (fahrenheitTemperature - 32) * 0.55555555555;
+  temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let fahrenheitTemperature = null;
+
 function chooseFahrenheit(event) {
   event.preventDefault();
-  fahrenheit.classList.add("active");
-  celsius.classList.remove("active");
+
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
