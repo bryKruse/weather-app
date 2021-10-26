@@ -70,6 +70,8 @@ function showTemp(response) {
 
   let fahrenheitTemperature = document.querySelector("#current-temp");
   fahrenheitTemperature.innerHTML = Math.round(response.data.main.temp);
+  fahrenheitTemperature = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function search(city) {
