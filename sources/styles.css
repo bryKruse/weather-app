@@ -87,3 +87,11 @@
   padding-left: 60px;
   margin-top: 0px;
 }
+.current-temp .active {
+  color: black;
+  cursor: default;
+}
+
+.current-temp .active:hover {
+  text-decoration: none;
+}
