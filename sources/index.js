@@ -43,12 +43,6 @@ currentTime.innerHTML = now.toLocaleString("en-US", {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", chooseCelsius);
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", chooseFahrenheit);
-
 function showTemp(response) {
   console.log(response);
   let temperature = Math.round(response.data.main.temp);
@@ -117,13 +111,24 @@ searchForm.addEventListener("submit", searchCity);
 
 function chooseCelsius(event) {
   event.preventDefault();
-  let showCelsius = document.querySelector("#current-temp");
-  showCelsius.innerHTML = `25`;
+  let temperatureElement = document.querySelector("#current-temp");
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 function chooseFahrenheit(event) {
   event.preventDefault();
-  let showFahrenheit = document.querySelector("#current-temp");
-  showFahrenheit.innerHTML = `77`;
+  fahrenheit.classList.add("active");
+  celsius.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", chooseCelsius);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", chooseFahrenheit);
 
 search("New York");
