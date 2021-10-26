@@ -75,6 +75,13 @@ function showTemp(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function search(city) {
+  let apiKey = "5293d8454b519c30f6f6331f38c85b4c";
+  let units = "imperial";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemp);
+}
+
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-city-info");
