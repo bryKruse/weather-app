@@ -130,10 +130,10 @@ function chooseFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let celsius = document.querySelector("#celsius");
+let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", chooseCelsius);
 
-let fahrenheit = document.querySelector("#fahrenheit");
+let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", chooseFahrenheit);
 
 search("New York");
