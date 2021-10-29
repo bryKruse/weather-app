@@ -39,6 +39,32 @@ function formatDate(timestamp) {
   return `${day} ${month} ${date}, ${year} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thursday", "Friday", "Saturday", "Sunday"];
+  let forecastHTML = `<div class="row upcoming-days-weather">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2 next-days">
+                <div class="day">${day}</div>
+                <div class="icon-weather-future">
+                  <i class="fas fa-cloud"></i>
+                </div>
+
+                <span class="high-temperature">70°F |</span>
+                <span class="low-temperature">64°F </span>
+              
+            `;
+    forecastHTML = forecastHTML + `</div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
@@ -135,3 +161,4 @@ let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", chooseFahrenheit);
 
 search("New York");
+displayForecast();
