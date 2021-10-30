@@ -1,5 +1,5 @@
 .border-of-weather-app {
-  border: 2px solid hsl(172, 98%, 34%);
+  border: 2px solid #c54c82;
   border-radius: 20px;
   margin: 40px 60px 40px 60px;
   padding: 20px;
@@ -8,7 +8,7 @@
   font-size: 70px;
   text-align: center;
   font-weight: bolder;
-  color: #02ad97;
+  color: #c54c82;
   padding: 15px;
   font-family: "Lobster", cursive;
 }
@@ -27,7 +27,7 @@
 }
 .search-button,
 .currentlocationbtn {
-  background-color: #d4ecdd;
+  background-color: #f9e0e7;
   color: rgb(0, 0, 0);
   border-radius: 5px;
   padding: 9px 15px;
@@ -42,7 +42,7 @@
   background-color: rgba(108, 131, 153, 0.774);
 }
 .top-information {
-  background: #d4ecdd;
+  background: #f9e0e7;
   border-radius: 20px 150px 150px 20px;
   padding: 60px;
   font-family: "Zilla Slab", serif;
@@ -71,7 +71,7 @@
   font-size: 20px;
 }
 .upcoming-days-weather {
-  background: #d4ecdd;
+  background: #f9e0e7;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
