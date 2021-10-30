@@ -47,6 +47,9 @@
   padding: 60px;
   font-family: "Zilla Slab", serif;
 }
+.description {
+  margin-left: 20px;
+}
 .city {
   font-weight: bolder;
 }
