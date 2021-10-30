@@ -67,7 +67,7 @@ function displayForecast(response) {
         forecastHTML +
         `
               <div class="col-2 next-days">
-                <div class="day">${formatDat(forecastDay.dt)}</div>
+                <div class="day">${formatDay(forecastDay.dt)}</div>
                 <div class="icon-weather-future">
                   <img
                     src="http://openweathermap.org/img/wn/${
@@ -75,6 +75,8 @@ function displayForecast(response) {
                     }@2x.png"
                     alt=""
                 </div>
+
+                <div class="hilo-future-forecast">
                 
 
                 <span class="high-temperature">${Math.round(
@@ -83,7 +85,8 @@ function displayForecast(response) {
                 <span class="low-temperature">${Math.round(
                   forecastDay.temp.min
                 )}°F </span>
-              
+                </div>
+              </div>
               </div>
             `;
     }
